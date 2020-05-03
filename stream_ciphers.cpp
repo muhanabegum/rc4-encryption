@@ -284,18 +284,11 @@ char* decode(char* ciphertext, unsigned long key)
 }
 
 
-#ifndef MARMOSET_TESTING
 int main(); 
-#endif
 
-#ifndef MARMOSET_TESTING
 int main()
 {
 	char str0[]{ "Hello World" };         
-	char str1[]{ "A Elbereth Gilthoniel\nsilivren penna miriel\n"
-		"o menel aglar elenath!\nNa-chaered palan-diriel\n"                      
-		"o galadhremmin ennorath,\nFanuilos, le linnathon\n"                     
-		"nef aear, si nef aearon!" };  // [1] 
 
 	std::cout << "\"" << str0 << "\"" << std::endl;
 
@@ -312,21 +305,6 @@ int main()
 	delete[] ciphertext;         
 	ciphertext = nullptr;
 	
-	std::cout << "\"" << str1 << "\"" << std::endl;
-
-	ciphertext = encode(str1, 51323);
-
-	std::cout << "\"" << ciphertext << "\"" << std::endl;
-
-	plaintext = decode(ciphertext, 51323);
-
-	std::cout << "\"" << plaintext << "\"" << std::endl;
-
-	delete[] plaintext;         
-	plaintext = nullptr;         
-	delete[] ciphertext;         
-	ciphertext = nullptr;
-	
 	return 0;
 }
-#endif 
+
