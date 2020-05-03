@@ -54,10 +54,6 @@ char* encode(char* plaintext, unsigned long key)
 
 	//plaintext = message;
 
-	////////////////////////////////////////////////
-	//EVERYTHING ABOVE THIS WORKS PERFECTLY GREAT //
-	////////////////////////////////////////////////
-
 	//std::cout << plaintext << std::endl;
 
 	//Making sure plaintext is a multiple of 4
