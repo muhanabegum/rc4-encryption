@@ -38,8 +38,7 @@ char* encode(char* plaintext, unsigned long key)
 	//}
 
 	//Finding the length of plaintext
-	//char message[] = { "Hello World!" }; /////////////////////////// HARD CODED VALUE
-	char* code_plaintext = plaintext;          /////////////////////////// FOR PLAINTEXT
+	char* code_plaintext = plaintext;          
 
 
 	unsigned long long length{ 0 };
@@ -49,12 +48,6 @@ char* encode(char* plaintext, unsigned long key)
 		length = length + 1;
 		++m; 
 	}
-	//std::cout << std::endl;             // OUTPUTING THE LENGTH 
-	//std::cout << length << std::endl;   // OF PLAINTEXT 
-
-	//plaintext = message;
-
-	//std::cout << plaintext << std::endl;
 
 	//Making sure plaintext is a multiple of 4
 	int extra_char{ 0 };
@@ -74,12 +67,6 @@ char* encode(char* plaintext, unsigned long key)
 		new_plaintext[counter6] = code_plaintext[counter6];
 	}
 
-	//for (int counter3{ 0 }; counter3 < (length + extra_char); ++counter3)
-	//{
-		//std::cout << new_plaintext[counter3];
-		//std::cout << std::endl;
-	//}
-
 	//XOR every byte of new_plaintext with R
 	unsigned char temp2{ 0 };
 	unsigned long R{ 0 };
@@ -95,8 +82,6 @@ char* encode(char* plaintext, unsigned long key)
 		r = (S[i] + S[j]) % 256;
 		R = S[r];
 		new_plaintext[counter4] = new_plaintext[counter4] ^ R;
-
-		//std::cout << new_plaintext[counter4];
 	}
 
 	/////////////////
