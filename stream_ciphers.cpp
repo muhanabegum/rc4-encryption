@@ -33,10 +33,6 @@ char* encode(char* plaintext, unsigned long key)
 		i = (i + 1) % 256;
 	}
 
-	//for (int p = 0; p < 256; p++) {
-		//std::cout << static_cast <int> (S[p]) << " "; // OUTPUTING THE SCRAMBLE
-	//}
-
 	//Finding the length of plaintext
 	char* code_plaintext = plaintext;          
 
@@ -136,10 +132,6 @@ char* encode(char* plaintext, unsigned long key)
 	}
 	return new_array;
 }
-
-///////////////////
-//SECOND FUNCTION// 
-///////////////////
 
 char* decode(char* ciphertext, unsigned long key)
 {
@@ -273,7 +265,8 @@ int main();
 
 int main()
 {
-	char str0[]{ "Hello World" };         
+	// let's encode and decode the phrase Hello World! 
+	char str0[]{ "Hello World!" };         
 
 	std::cout << "\"" << str0 << "\"" << std::endl;
 
